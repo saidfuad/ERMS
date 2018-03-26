@@ -83,3 +83,29 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+/*
+|--------------------------------------------------------------------------
+| Custom Constants (added by CI Bootstrap)
+|--------------------------------------------------------------------------
+| Constants to be used in both Frontend and other modules
+|
+*/
+if (!(PHP_SAPI === 'cli' OR defined('STDIN')))
+{
+	// Base URL with directory support
+	$protocol = (!empty($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS'])!== 'off') ? 'https' : 'http';
+	$base_url = $protocol.'://'.$_SERVER['HTTP_HOST'];
+	$base_url.= dirname($_SERVER['SCRIPT_NAME']);
+	define('BASE_URL', $base_url);
+	
+	// For API prefix in Swagger annotation (/application/modules/api/swagger/info.php)
+	define('API_PROTOCOL', $protocol);
+	define('API_HOST', $_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']));
+}
+
+define('CI_BOOTSTRAP_REPO',			'https://github.com/waifung0207/ci_bootstrap_3');
+define('CI_BOOTSTRAP_VERSION',		'Build 20170324');	// will follow semantic version (e.g. v1.x.x) after first stable launch
+
+// Upload paths
+//define('UPLOAD_COVER_PHOTO',	'assets/uploads/cover_photos');

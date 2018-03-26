@@ -1,26 +1,4 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
-* Name:  Ion Auth
-*
-* Version: 2.5.2
-*
-* Author: Ben Edmunds
-*		  ben.edmunds@gmail.com
-*         @benedmunds
-*
-* Added Awesomeness: Phil Sturgeon
-*
-* Location: http://github.com/benedmunds/CodeIgniter-Ion-Auth
-*
-* Created:  10.01.2009
-*
-* Description:  Modified auth system based on redux_auth with extensive customization.  This is basically what Redux Auth 2 should be.
-* Original Author name has been kept but that does not mean that the method has not been modified.
-*
-* Requirements: PHP5 or above
-*
-*/
-
 /*
 | -------------------------------------------------------------------------
 | Tables.
@@ -28,7 +6,6 @@
 | Database table names.
 */
 $config['tables']['users']           = 'users';
-$config['tables']['reports']           = 'reports';
 $config['tables']['groups']          = 'groups';
 $config['tables']['users_groups']    = 'users_groups';
 $config['tables']['login_attempts']  = 'login_attempts';
@@ -83,8 +60,8 @@ $config['salt_prefix']    = version_compare(PHP_VERSION, '5.3.7', '<') ? '$2a$' 
  | The controller should check this function and act
  | appropriately. If this variable set to 0, there is no maximum.
  */
-$config['site_title']                 = "Example.com";       // Site Title, example.com
-$config['admin_email']                = "admin@example.com"; // Admin Email, admin@example.com
+$config['site_title']                 = "ERMS";      // Site Title, example.com
+$config['admin_email']                = "saidfuad91@gmail.com"; // Admin Email, admin@example.com
 $config['default_group']              = 'members';           // Default group, use name
 $config['admin_group']                = 'admin';             // Default administrators group, use name
 $config['identity']                   = 'email';             // You can use any unique column in your table as identity column. The values in this column, alongside password, will be used for login purposes
@@ -119,7 +96,7 @@ $config['identity_cookie_name'] = 'identity';
  | 	  'file' = Use the default CI config or use from a config file
  | 	  array  = Manually set your email config settings
  */
-$config['use_ci_email'] = FALSE; // Send Email using the builtin CI email class, if false it will return the code and the identity
+$config['use_ci_email'] = 'file'; // Send Email using the builtin CI email class, if false it will return the code and the identity
 $config['email_config'] = array(
 	'mailtype' => 'html',
 );
@@ -131,7 +108,7 @@ $config['email_config'] = array(
  | Folder where email templates are stored.
  | Default: auth/
  */
-$config['email_templates'] = 'auth/email/';
+$config['email_templates'] = 'email/auth/';
 
 /*
  | -------------------------------------------------------------------------
@@ -139,7 +116,7 @@ $config['email_templates'] = 'auth/email/';
  | -------------------------------------------------------------------------
  | Default: activate.tpl.php
  */
-$config['email_activate'] = 'activate.tpl.php';
+$config['email_activate'] = 'activate.php';
 
 /*
  | -------------------------------------------------------------------------
@@ -147,7 +124,7 @@ $config['email_activate'] = 'activate.tpl.php';
  | -------------------------------------------------------------------------
  | Default: forgot_password.tpl.php
  */
-$config['email_forgot_password'] = 'forgot_password.tpl.php';
+$config['email_forgot_password'] = 'forgot_password.php';
 
 /*
  | -------------------------------------------------------------------------
@@ -155,7 +132,7 @@ $config['email_forgot_password'] = 'forgot_password.tpl.php';
  | -------------------------------------------------------------------------
  | Default: new_password.tpl.php
  */
-$config['email_forgot_password_complete'] = 'new_password.tpl.php';
+$config['email_forgot_password_complete'] = 'new_password.php';
 
 /*
  | -------------------------------------------------------------------------
